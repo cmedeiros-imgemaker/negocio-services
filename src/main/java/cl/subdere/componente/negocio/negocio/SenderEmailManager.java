@@ -9,7 +9,7 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
 import cl.subdere.componente.negocio.contracts.SendEmailInput;
-import cl.subdere.componente.negocio.dao.MessageBody;
+import cl.subdere.componente.negocio.dto.MessageBody;
 import cl.subdere.componente.negocio.exceptions.NegocioException;
 import cl.subdere.componente.negocio.jms.entities.QueueProducer;
 

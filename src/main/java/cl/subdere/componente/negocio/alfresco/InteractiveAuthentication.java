@@ -1,4 +1,4 @@
-package TicketGenerator;
+package cl.subdere.componente.negocio.alfresco;
 
 import java.io.BufferedReader;
 import java.io.IOException;

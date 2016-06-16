@@ -1,4 +1,4 @@
-package TicketGenerator;
+package cl.subdere.componente.negocio.alfresco;
 
 public class Pruebas {
 
