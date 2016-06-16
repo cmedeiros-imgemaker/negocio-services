@@ -31,16 +31,16 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-            <groupId>org.jboss.as</groupId>
-            <artifactId>jboss-as-jms-client-bom</artifactId>
-            <version>${version.org.jboss.as}</version>
-            <type>pom</type>
-        </dependency>
+			<groupId>org.jboss.as</groupId>
+			<artifactId>jboss-as-jms-client-bom</artifactId>
+			<version>${version.org.jboss.as}</version>
+			<type>pom</type>
+		</dependency>
 		<dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>7.0</version>
-        </dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+		</dependency>
 		<dependency>
 			<groupId>javax.enterprise</groupId>
 			<artifactId>cdi-api</artifactId>
@@ -105,8 +105,6 @@
 			<artifactId>httpmime</artifactId>
 			<version>4.2.1</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
