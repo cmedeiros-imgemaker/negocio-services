@@ -22,7 +22,7 @@ public class UtilidadesAlfresco {
 
 	private static final Gson OBJ_GSON = new Gson();
 
-	public static String generarTicket() {
+	public  String generarTicket() {
 
 		try {
 			URL url = new URL(
@@ -46,7 +46,7 @@ public class UtilidadesAlfresco {
 
 		public static void main(String args[])
 		{
-			System.out.println(generarTicket());
+//			System.out.println(generarTicket());
 		}
 	
 	public static void uploadDocument(String authTicket, File fileobj,
