@@ -23,7 +23,7 @@ public class UtilidadesAlfresco {
 	private static final Gson OBJ_GSON = new Gson();
 
 	public static String generarTicket() {
-
+		
 		try {
 			URL url = new URL(
 					"http://alfresco.imit.cl:8080/alfresco/service/api/login?u=rsalazar&pw=redhat2015&format=json");
@@ -41,7 +41,6 @@ public class UtilidadesAlfresco {
 							+ error.getMessage());
 			return null;
 		}
-
 	}
 
 		public static void main(String args[])
@@ -52,6 +51,7 @@ public class UtilidadesAlfresco {
 	public static void uploadDocument(String authTicket, File fileobj,
 			String filename, String filetype, String description,
 			String destination) {
+		
 		try {
 			String urlString = "http://alfresco.imit.cl:8080/alfresco/service/api/upload?alf_ticket="
 					+ authTicket;
@@ -85,6 +85,7 @@ public class UtilidadesAlfresco {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+		
 	}
 
 }
