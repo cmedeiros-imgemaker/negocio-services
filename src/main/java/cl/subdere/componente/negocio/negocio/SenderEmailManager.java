@@ -16,7 +16,7 @@ import cl.subdere.componente.negocio.jms.entities.QueueProducer;
 /**
  * Session Bean implementation class SenderEmailManager
  */
-@Stateless
+@Stateless(name = "SenderEmail")
 @LocalBean
 public class SenderEmailManager implements SenderEmailManagerRemote, SenderEmailManagerLocal {
 

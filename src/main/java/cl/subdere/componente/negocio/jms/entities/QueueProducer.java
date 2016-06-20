@@ -18,7 +18,7 @@ import cl.subdere.componente.negocio.contracts.SendEmailInput;
 public class QueueProducer {
 
     private static final String DEFAULT_CONNECTION_FACTORY = "jms/RemoteConnectionFactory";
-    private static final String DEFAULT_DESTINATION = "jms/queue/test";
+    private static final String DEFAULT_DESTINATION = "jms/queue/SubdereEmail";
     private static final String DEFAULT_USERNAME = "quickstartUser";
     private static final String DEFAULT_PASSWORD = "quickstartPwd1!";
     private static final String INITIAL_CONTEXT_FACTORY = "org.jboss.naming.remote.client.InitialContextFactory";
@@ -37,8 +37,6 @@ public class QueueProducer {
         env.put(Context.SECURITY_PRINCIPAL, System.getProperty("jms.username", DEFAULT_USERNAME));
         System.out.println("jms.username: " + System.getProperty("jms.username", DEFAULT_USERNAME));
         env.put(Context.SECURITY_CREDENTIALS, System.getProperty("jms.password", DEFAULT_PASSWORD));
-        System.out.println("jms.password: " + System.getProperty("jms.password", DEFAULT_PASSWORD));
-        //env.put("jboss.naming.client.ejb.context", true);
         context = new InitialContext(env);
         
         String connectionFactoryString = System.getProperty("connection.factory", DEFAULT_CONNECTION_FACTORY);
