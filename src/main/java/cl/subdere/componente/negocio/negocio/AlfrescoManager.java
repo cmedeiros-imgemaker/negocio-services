@@ -14,11 +14,11 @@ import cl.subdere.componente.negocio.dto.AlfrescoSucces;
 public class AlfrescoManager implements AlfrescoManagerRemote, AlfrescoManagerLocal {
 
 
-//	@Inject 
+
 	private UtilidadesAlfresco objUtilidadesAlfresco;
 	
     public AlfrescoManager() {
-        // TODO Auto-generated constructor stub
+    	objUtilidadesAlfresco = new UtilidadesAlfresco();
     }
 
 	@Override
