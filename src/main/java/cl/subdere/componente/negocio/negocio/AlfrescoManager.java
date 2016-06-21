@@ -3,6 +3,7 @@ package cl.subdere.componente.negocio.negocio;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
+import cl.subdere.componente.negocio.alfresco.AlfrescoInterface;
 import cl.subdere.componente.negocio.alfresco.UtilidadesAlfresco;
 import cl.subdere.componente.negocio.dto.AlfrescoSucces;
 
@@ -15,7 +16,7 @@ public class AlfrescoManager implements AlfrescoManagerRemote, AlfrescoManagerLo
 
 
 
-	private UtilidadesAlfresco objUtilidadesAlfresco;
+	private AlfrescoInterface objUtilidadesAlfresco;
 	
     public AlfrescoManager() {
     	objUtilidadesAlfresco = new UtilidadesAlfresco();

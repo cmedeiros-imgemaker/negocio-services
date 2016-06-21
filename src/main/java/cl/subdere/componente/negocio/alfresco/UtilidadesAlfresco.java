@@ -5,25 +5,20 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.methods.PostMethod;
-import org.apache.commons.httpclient.methods.multipart.FilePart;
-import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
-import org.apache.commons.httpclient.methods.multipart.Part;
-import org.apache.commons.httpclient.methods.multipart.StringPart;
+import javax.inject.Named;
+
 import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
 
-import cl.subdere.componente.negocio.dto.AlfrescoSucces;
-
 import com.google.gson.Gson;
 
-public class UtilidadesAlfresco {
+@Named("AlfrescoInterface")
+public class UtilidadesAlfresco implements  AlfrescoInterface{
 
 	private static final Gson OBJ_GSON = new Gson();
-
-	public  String generarTicket() {
-
+	
+	@Override
+	public String generarTicket() {
 		try {
 			URL url = new URL(
 					"http://alfresco.imit.cl:8080/alfresco/service/api/login?u=rsalazar&pw=redhat2015&format=json");
@@ -43,15 +38,11 @@ public class UtilidadesAlfresco {
 		}
 	}
 
-		public static void main(String args[])
-		{
-//			System.out.println(generarTicket());
-		}
-	
-	public static void uploadDocument(String authTicket, File fileobj,
+	@Override
+	public void uploadDocument(String authTicket, File fileobj,
 			String filename, String filetype, String description,
 			String destination) {
-		
+
 		try {
 			String urlString = "http://alfresco.imit.cl:8080/alfresco/service/api/upload?alf_ticket="
 					+ authTicket;
@@ -85,7 +76,10 @@ public class UtilidadesAlfresco {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+
 		
 	}
+
+	
 
 }
