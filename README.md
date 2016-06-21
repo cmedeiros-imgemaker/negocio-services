@@ -65,7 +65,7 @@ cd $EAP_HOME/bin
 Crear sesión de email en EAP ejecutando el siguiente comando.
 
 ```
-/subsystem=mail/mail-session=subdereEmail:add(jndi-name=java:jboss/mail/Subdere, default-from=subdere@imagemaker.cl)
+/subsystem=mail/mail-session=subdereEmail:add(jndi-name=java:jboss/mail/Subdere, from=subdere@imagemaker.cl)
 ```
 
 Agregar puente de conexión al servidor SMTP en EAP ejecutando el siguiente comando.

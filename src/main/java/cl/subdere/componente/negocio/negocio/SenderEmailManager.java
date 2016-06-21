@@ -22,10 +22,13 @@ public class SenderEmailManager implements SenderEmailManagerRemote, SenderEmail
 
 	public static final String EMAIL_SESSION_JNDI_PATH = System.getProperty("mail.smtp.jndi", "java:jboss/mail/Subdere");
 	
+	private QueueProducer queueProducer;
+	
     /**
      * Default constructor. 
      */
     public SenderEmailManager() {
+    	queueProducer = new QueueProducer();
     }
 
 	@Override
@@ -50,7 +53,6 @@ public class SenderEmailManager implements SenderEmailManagerRemote, SenderEmail
 	@Override
 	public Boolean sendAsync(SendEmailInput input) throws NegocioException {
 		System.out.println("Start sendAsync: " + input.toString());
-		QueueProducer queueProducer = new QueueProducer();
 		try {
 			queueProducer.sendMessage(input);
 		} catch (Exception e) {
