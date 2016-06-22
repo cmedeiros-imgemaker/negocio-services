@@ -121,6 +121,21 @@ de forma global.
  |                   +-- module.xml
  |                   +-- commons-httpclient-3.1.jar
 ```
+```
+├── com
+|   ├── google
+|   └── gson
+|       └── main
+|           ├── module.xml
+|           └── gson-2.3.jar
+└── org
+    └── apache
+        └── commons
+            └── httpclient
+                └── main
+                    ├── module.xml
+                    └── commons-httpclient-3.1.jar
+```
 
 ###### *Los archivos gson-2.3.jar, commons-httpclient-3.1.jar y los module.xml se encuentran en la ruta /modules del proyecto.*
 
