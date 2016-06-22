@@ -7,8 +7,16 @@ import java.net.URLConnection;
 
 import javax.inject.Named;
 
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.httpclient.methods.multipart.FilePart;
+import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
+import org.apache.commons.httpclient.methods.multipart.Part;
+import org.apache.commons.httpclient.methods.multipart.StringPart;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
+
+import cl.subdere.componente.negocio.dto.AlfrescoSucces;
 
 import com.google.gson.Gson;
 
