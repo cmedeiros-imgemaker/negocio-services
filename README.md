@@ -106,22 +106,6 @@ de forma global.
 1. Para ello es necesario ingresar a la ruta *"$EAP_HOME/modules"* y generar la siguiente estructura:
 
 ```
- .
- +-- _com
- |   +-- _google
- |       +-- _gson
- |           +-- _main
- |               +-- module.xml
- |               +-- gson-2.3.jar
- +-- _org
- |   +-- _apache
- |       +-- _commons
- |           +-- _httpclient
- |               +-- _main
- |                   +-- module.xml
- |                   +-- commons-httpclient-3.1.jar
-```
-```
 ├── com
 |   ├── google
 |   └── gson
