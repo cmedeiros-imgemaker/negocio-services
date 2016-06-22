@@ -104,6 +104,8 @@ Para el correcto funcionamiento de las funcionalidades de este módulo es necesa
 de forma global.
 
 1. Para ello es necesario ingresar a la ruta *"$EAP_HOME/modules"* y generar la siguiente estructura:
+
+```
  .
  +-- _com
  |   +-- _google
@@ -118,6 +120,7 @@ de forma global.
  |               +-- _main
  |                   +-- module.xml
  |                   +-- commons-httpclient-3.1.jar
+```
 
 ###### *Los archivos gson-2.3.jar, commons-httpclient-3.1.jar y los module.xml se encuentran en la ruta /modules del proyecto.*
 
