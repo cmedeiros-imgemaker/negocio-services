@@ -54,7 +54,7 @@ public class SenderEmailManager implements SenderEmailManagerRemote, SenderEmail
 	public Boolean sendAsync(SendEmailInput input) throws NegocioException {
 		System.out.println("Start sendAsync: " + input.toString());
 		try {
-			queueProducer.sendMessage(input);
+			queueProducer.sendMessage2(input);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

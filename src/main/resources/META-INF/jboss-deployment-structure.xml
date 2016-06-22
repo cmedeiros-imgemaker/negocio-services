@@ -2,7 +2,7 @@
 <jboss-deployment-structure>
   <deployment>
     <dependencies>
-      <module name="gson-2.2.2.jar" />      
+<!--       <module name="gson-2.2.2.jar" />       -->
     </dependencies>
   </deployment>
 </jboss-deployment-structure>

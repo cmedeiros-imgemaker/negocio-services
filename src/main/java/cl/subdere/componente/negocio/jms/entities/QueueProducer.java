@@ -7,6 +7,7 @@ import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.MessageProducer;
+import javax.jms.Queue;
 import javax.jms.Session;
 import javax.jms.ObjectMessage;
 import javax.naming.Context;
@@ -65,5 +66,19 @@ public class QueueProducer {
         if (connection != null) {
             connection.close();
         }
+    }
+    
+    public void sendMessage2(SendEmailInput input) throws NamingException, JMSException {
+    	InitialContext ic = new InitialContext();
+    	ConnectionFactory cf = (ConnectionFactory)ic.lookup("/ConnectionFactory");
+    	Queue emailQueue = (Queue)ic.lookup("/jms/queue/SubdereEmail");
+    	Connection connection = cf.createConnection();
+    	Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+    	MessageProducer producer = session.createProducer(emailQueue);
+    	connection.start();
+    	ObjectMessage message = session.createObjectMessage(input);
+    	producer.send(message);
+    	connection.close();
+    	session.close();
     }
 }
