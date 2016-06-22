@@ -2,8 +2,8 @@ package cl.subdere.componente.negocio.negocio;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 
+import cl.subdere.componente.negocio.alfresco.AlfrescoInterface;
 import cl.subdere.componente.negocio.alfresco.UtilidadesAlfresco;
 import cl.subdere.componente.negocio.dto.AlfrescoSucces;
 
@@ -15,11 +15,11 @@ import cl.subdere.componente.negocio.dto.AlfrescoSucces;
 public class AlfrescoManager implements AlfrescoManagerRemote, AlfrescoManagerLocal {
 
 
-	@Inject 
-	private UtilidadesAlfresco objUtilidadesAlfresco;
+
+	private AlfrescoInterface objUtilidadesAlfresco;
 	
     public AlfrescoManager() {
-        // TODO Auto-generated constructor stub
+    	objUtilidadesAlfresco = new UtilidadesAlfresco();
     }
 
 	@Override

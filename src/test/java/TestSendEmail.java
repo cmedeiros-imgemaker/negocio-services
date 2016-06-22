@@ -1,21 +1,8 @@
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
-
-import javax.xml.transform.ErrorListener;
-import javax.xml.transform.Result;
-import javax.xml.transform.Source;
-import javax.xml.transform.Templates;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.URIResolver;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
 
 import cl.subdere.componente.negocio.contracts.SendEmailInput;
 import cl.subdere.componente.negocio.exceptions.NegocioException;
+import cl.subdere.componente.negocio.negocio.AlfrescoManager;
 import cl.subdere.componente.negocio.negocio.SenderEmailManager;
 
 
@@ -25,7 +12,7 @@ public class TestSendEmail {
 	 * @param args
 	 * @throws Exception
 	 */
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		
 		
 		SendEmailInput input = new SendEmailInput();
@@ -47,5 +34,12 @@ public class TestSendEmail {
 			e.printStackTrace();
 		}
 	}
-
+		
+		
+		/*
+		AlfrescoManager objAlfrescoManager =  new AlfrescoManager();
+		
+		System.out.println(objAlfrescoManager.generarTicket());
+		*/
+		
 }

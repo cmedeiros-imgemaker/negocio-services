@@ -19,9 +19,9 @@ import cl.subdere.componente.negocio.exceptions.NegocioException;
 @MessageDriven(
 		activationConfig = { @ActivationConfigProperty(
 				propertyName = "destinationType", propertyValue = "javax.jms.Queue"), @ActivationConfigProperty(
-				propertyName = "destination", propertyValue = "testQueue")
+				propertyName = "destination", propertyValue = "java:/queue/SubdereEmail")
 		}, 
-		mappedName = "testQueue")
+		mappedName = "java:/queue/SubdereEmail")
 public class MessageEmailManager implements MessageListener {
 
 	@Resource
