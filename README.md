@@ -24,8 +24,16 @@ cd $EAP_HOME/bin
 
 ./add-user.sh
 ```
-A continuación, se debe seleccionar la opción "b", para usuario de aplicaciones, definir un nombre y contraseña para el registro, y 
-finalmente indicar que debe pertenecer al grupo "guest", para dar cierre al proceso solo hacer click en opción enter en las siguientes opciones.
+
+Seguir las siguientes instrucciones:
+ 
+ - Seleccionar la opción *"b"*, para usuario de aplicaciones.
+ - Indicar que pertenece al dominio *"ApplicationRealm"*.
+ - Definir un nombre y contraseña para el registro. 
+ - Indicar que debe pertenecer al rol "guest".
+ - Confirmar creación de usuario.
+ - Negar acceso del usuario para otro host.
+
 Siguiendo estos pasos el nuevo usuario debe quedar registrado.
 
 2. Crear cola Queue para envío de email asincrono.
@@ -71,13 +79,13 @@ Crear sesión de email en EAP ejecutando el siguiente comando.
 Agregar puente de conexión al servidor SMTP en EAP ejecutando el siguiente comando.
 
 ```
-/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=subdere-smtp-binding:add(host=smtp.gmail.com, port=465)
+/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=subdere-smtp-binding:add(host=smtp.gmail.com, port=587)
 ```
 
 Enlazar sesión con conexión por protocolo SMTP.
 
 ```
-/subsystem=mail/mail-session=subdereEmail/server=smtp:add(outbound-socket-binding-ref=subdere-smtp-binding, username=subdere@imagemaker.cl, password=pass, tls=true)
+/subsystem=mail/mail-session=subdereEmail/server=smtp:add(outbound-socket-binding-ref=subdere-smtp-binding, username=subdere@imagemaker.cl, password=imit2016, tls=true)
 ```
 
 4. Agregar variables globales:
@@ -88,7 +96,7 @@ una de los siguientes pares hacer click en el botón "Add", luego agregar par de
  - **Name**: mail.smtp.jndi, **Value**: java:jboss/mail/Subdere *{JNDI Sesión de email creada en el paso 3}*
  - **Name**: jms.username, **Value**: quickstartUser *{Nombre de Usuario de aplicaciones creado en el paso 1}*
  - **Name**: jms.password, **Value**: quickstartPwd1! *{Contraseña de Usuario de aplicaciones creado en el paso 1}*
- - **Name**: destination, **Value**: java:/queue/SubdereEmail *{JNDI de cola queue creada en paso 2}*
+ - **Name**: destination, **Value**: jms/queue/SubdereEmail *{JNDI de cola queue creada en paso 2}*
 
 ### Servicio Alfresco - Configuración de Jboss EAP
 
@@ -97,22 +105,20 @@ de forma global.
 
 1. Para ello es necesario ingresar a la ruta *"$EAP_HOME/modules"* y generar la siguiente estructura:
 
-```
-.
-+--com
-|  +--google
-|    +--gson
-|	  +--main
-|	    +--module.xml
-|	    +--gson-2.3.jar
-+--org
-|  +--apache
-|    +--commons
-|      +--httpclient
-|	     +--main
-|	       +--module.xml
-|	       +--commons-httpclient-3.1.jar
-```
+├── com
+|   ├── google
+|   └── gson
+|       └── main
+|           ├── module.xml
+|           └── gson-2.3.jar
+└── org
+    └── apache
+        └── commons
+            └── httpclient
+ 	        └── main
+ 	            ├── module.xml
+ 	            └── commons-httpclient-3.1.jar
+
 ###### *Los archivos gson-2.3.jar, commons-httpclient-3.1.jar y los module.xml se encuentran en la ruta /modules del proyecto.*
 
 2. Reiniciar Jboss EAP.
