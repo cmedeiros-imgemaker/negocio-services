@@ -104,34 +104,20 @@ Para el correcto funcionamiento de las funcionalidades de este módulo es necesa
 de forma global.
 
 1. Para ello es necesario ingresar a la ruta *"$EAP_HOME/modules"* y generar la siguiente estructura:
-    ├── client
-    │   ├── app                 - All of our app specific components go in here
-    │   ├── assets              - Custom assets: fonts, images, etc…
-    │   ├── components          - Our reusable components, non-specific to our app
-    │
-    ├── e2e                     - Our protractor end to end tests
-    │
-    └── server
-        ├── api                 - Our apps server api
-        ├── auth                - For handling authentication with different auth strategies
-        ├── components          - Our reusable or app-wide components
-        ├── config              - Where we do the bulk of our apps configuration
-        │   └── local.env.js    - Keep our environment variables out of source control
-        │   └── environment     - Configuration specific to the node environment
-        └── views               - Server rendered views
- ├── com
-└── google
-            └── gson
-                └── main
-                    ├── module.xml
-                    └── gson-2.3.jar
- └── org
-     └── apache
-         └── commons
-             └── httpclient
-                 └── main
-                     ├── module.xml
-                     └── commons-httpclient-3.1.jar
+ .
+ +-- _com
+ |   +-- _google
+ |       +-- _gson
+ |           +-- _main
+ |               +-- module.xml
+ |               +-- gson-2.3.jar
+ +-- _org
+ |   +-- _apache
+ |       +-- _commons
+ |           +-- _httpclient
+ |               +-- _main
+ |                   +-- module.xml
+ |                   +-- commons-httpclient-3.1.jar
 
 ###### *Los archivos gson-2.3.jar, commons-httpclient-3.1.jar y los module.xml se encuentran en la ruta /modules del proyecto.*
 
