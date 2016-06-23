@@ -105,22 +105,22 @@ de forma global.
 
 1. Para ello es necesario ingresar a la ruta *"$EAP_HOME/modules"* y generar la siguiente estructura:
 
-```
-├── com
-|   ├── google
-|   └── gson
-|       └── main
-|           ├── module.xml
-|           └── gson-2.3.jar
-└── org
-    └── apache
-        └── commons
-            └── httpclient
-                └── main
-                    ├── module.xml
-                    └── commons-httpclient-3.1.jar
-```
+  ```
+  ├── com
+  |   ├── google
+  |   └── gson
+  |       └── main
+  |           ├── module.xml
+  |           └── gson-2.3.jar
+  └── org
+      └── apache
+          └── commons
+              └── httpclient
+                  └── main
+                      ├── module.xml
+                      └── commons-httpclient-3.1.jar
+  ```
 
-###### *Los archivos gson-2.3.jar, commons-httpclient-3.1.jar y los module.xml se encuentran en la ruta /modules del proyecto.*
+  ###### *Los archivos gson-2.3.jar, commons-httpclient-3.1.jar y los module.xml se encuentran en la ruta /modules del proyecto.*
 
 2. Reiniciar Jboss EAP.
